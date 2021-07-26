@@ -58,6 +58,16 @@ ifeq ($(CONFIG_ARCH_TRINKET), y)
 LINUXINCLUDE    += \
                 -include $(srctree)/techpack/audio/config/trinketautoconf.h
 endif
+ifeq ($(CONFIG_RAV_DTB), y)
+LINUXINCLUDE    += \
+                -include $(srctree)/techpack/audio/config/ravautoconf.h
+endif
+
+endif
+ifeq ($(CONFIG_SOFIAR_DTB), y)
+LINUXINCLUDE    += \
+                -include $(srctree)/techpack/audio/config/sofiarautoconf.h
+endif
 
 obj-y += soc/
 obj-y += dsp/
